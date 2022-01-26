@@ -1,0 +1,15 @@
+D:\Projects\ProiectDAW.DAL\bin\Debug\net5.0\ProiectDAW.DAL.deps.json
+D:\Projects\ProiectDAW.DAL\bin\Debug\net5.0\ProiectDAW.DAL.runtimeconfig.json
+D:\Projects\ProiectDAW.DAL\bin\Debug\net5.0\ProiectDAW.DAL.runtimeconfig.dev.json
+D:\Projects\ProiectDAW.DAL\bin\Debug\net5.0\ProiectDAW.DAL.dll
+D:\Projects\ProiectDAW.DAL\bin\Debug\net5.0\ref\ProiectDAW.DAL.dll
+D:\Projects\ProiectDAW.DAL\bin\Debug\net5.0\ProiectDAW.DAL.pdb
+D:\Projects\ProiectDAW.DAL\obj\Debug\net5.0\ProiectDAW.DAL.csproj.AssemblyReference.cache
+D:\Projects\ProiectDAW.DAL\obj\Debug\net5.0\ProiectDAW.DAL.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\ProiectDAW.DAL\obj\Debug\net5.0\ProiectDAW.DAL.AssemblyInfoInputs.cache
+D:\Projects\ProiectDAW.DAL\obj\Debug\net5.0\ProiectDAW.DAL.AssemblyInfo.cs
+D:\Projects\ProiectDAW.DAL\obj\Debug\net5.0\ProiectDAW.DAL.csproj.CoreCompileInputs.cache
+D:\Projects\ProiectDAW.DAL\obj\Debug\net5.0\ProiectDAW.DAL.dll
+D:\Projects\ProiectDAW.DAL\obj\Debug\net5.0\ref\ProiectDAW.DAL.dll
+D:\Projects\ProiectDAW.DAL\obj\Debug\net5.0\ProiectDAW.DAL.pdb
+D:\Projects\ProiectDAW.DAL\obj\Debug\net5.0\ProiectDAW.DAL.genruntimeconfig.cache
