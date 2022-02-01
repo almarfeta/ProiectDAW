@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using ProiectDAW.DAL.Entities;
@@ -22,6 +23,7 @@ namespace ProiectDAW.Controllers
         }
 
         [HttpPost("AddProdus")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> AddProdus([FromBody] Produs produs)
         {
             _repository.Create(produs);
@@ -31,6 +33,7 @@ namespace ProiectDAW.Controllers
         }
 
         [HttpGet("GetProdusOrderByFurnizor")]
+        [AllowAnonymous]
         public async Task<IActionResult> GetAllProducts()
         {
             var produse = await _repository.GetAllProductsOrderByFurnizor();
@@ -43,6 +46,7 @@ namespace ProiectDAW.Controllers
         }
 
         [HttpDelete("DeleteProdus/{id}")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> DeleteProdus([FromRoute] int id)
         {
             var produs = await _repository.GetByIdAsync(id);
@@ -53,6 +57,7 @@ namespace ProiectDAW.Controllers
         }
 
         [HttpPut("UpdateProdus/{id}")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> UpdateProdus([FromBody] Produs updatedProduct, [FromRoute] int id)
         {
             var produs = await _repository.GetByIdAsync(id);

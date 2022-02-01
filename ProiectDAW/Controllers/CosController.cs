@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using ProiectDAW.DAL.Entities;
@@ -22,6 +23,7 @@ namespace ProiectDAW.Controllers
         }
 
         [HttpPost("AddInCos")]
+        [Authorize(Roles = "User")]
         public async Task<IActionResult> AddInCos([FromBody] Cos cos)
         {
             _repository.Create(cos);
@@ -31,6 +33,7 @@ namespace ProiectDAW.Controllers
         }
 
         [HttpGet("GetCosByClientName/{name}")]
+        [Authorize(Roles = "User")]
         public async Task<IActionResult> GetCosByClientName(string name)
         {
             var produse = await _repository.GetCosByClientName(name);
@@ -43,6 +46,7 @@ namespace ProiectDAW.Controllers
         }
 
         [HttpDelete("DeleteFromCos/{id}")]
+        [Authorize(Roles = "User")]
         public async Task<IActionResult> DeleteFromCos([FromRoute] int id)
         {
             var produs = await _repository.GetByIdAsync(id);
@@ -53,6 +57,7 @@ namespace ProiectDAW.Controllers
         }
 
         [HttpPut("UpdateCos/{id}")]
+        [Authorize(Roles = "User")]
         public async Task<IActionResult> UpdateCos([FromBody] Cos updatedCos, [FromRoute] int id)
         {
             var produs = await _repository.GetByIdAsync(id);

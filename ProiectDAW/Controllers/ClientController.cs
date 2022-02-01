@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -24,6 +25,7 @@ namespace ProiectDAW.Controllers
         }
 
         [HttpGet("GetClientsWithAddress")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> GetAllClients()
         {
             var clients = await _repository.GetAllClientsWithAddress();
@@ -36,6 +38,7 @@ namespace ProiectDAW.Controllers
         }
 
         [HttpPost("AddClient")]
+        [Authorize(Roles = "User")]
         public async Task<IActionResult> AddClient([FromBody] Client client)
         {
             _repository.Create(client);
@@ -45,6 +48,7 @@ namespace ProiectDAW.Controllers
         }
 
         [HttpDelete("DeleteClient/{id}")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> DeleteClient([FromRoute] int id)
         {
             var client = await _repository.GetByIdAsync(id);
@@ -55,6 +59,7 @@ namespace ProiectDAW.Controllers
         }
 
         [HttpPut("UpdateClient/{id}")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> UpdateClient([FromBody] Client updatedClient, [FromRoute] int id)
         {
             var client = await _repository.GetByIdAsync(id);
